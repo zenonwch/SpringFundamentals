@@ -16,11 +16,13 @@ public class CustomerServiceImpl implements CustomerService {
 	public CustomerServiceImpl() {
 	}
 
+	@Autowired                                                                                                  //Constructor injection
 	public CustomerServiceImpl(final CustomerRepository customerRepository) {
+		System.out.println("We are using constructor injection here");
 		this.customerRepository = customerRepository;
 	}
 
-	@Autowired
+//	@Autowired                                                                                                  // Setter injection
 	public void setCustomerRepository(final CustomerRepository customerRepository) {
 		System.out.println("We are using setter injection here");
 		this.customerRepository = customerRepository;
