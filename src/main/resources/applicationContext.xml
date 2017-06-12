@@ -9,7 +9,8 @@
 
     <bean name="customerService"
           class="com.pluralsight.service.CustomerServiceImpl">
-        <property name="customerRepository" ref="repository"/>
+        <!--<property name="customerRepository" ref="repository"/>-->           <!-- setter injection -->
+        <constructor-arg index="0" ref="repository"></constructor-arg>            <!-- constructor injection -->
     </bean>
 
 </beans>
