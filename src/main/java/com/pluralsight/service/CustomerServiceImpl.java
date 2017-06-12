@@ -10,7 +10,7 @@ import java.util.List;
 @Service("customerService")
 public class CustomerServiceImpl implements CustomerService {
 
-	@Autowired
+//	@Autowired                                                                                                  // Member injection
 	private CustomerRepository customerRepository;
 
 	public CustomerServiceImpl() {
@@ -20,7 +20,9 @@ public class CustomerServiceImpl implements CustomerService {
 		this.customerRepository = customerRepository;
 	}
 
-	public void setCustomerRepositoryRepository(final CustomerRepository customerRepository) {
+	@Autowired
+	public void setCustomerRepository(final CustomerRepository customerRepository) {
+		System.out.println("We are using setter injection here");
 		this.customerRepository = customerRepository;
 	}
 
