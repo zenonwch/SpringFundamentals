@@ -16,7 +16,7 @@
 
     <!-- with autowire -->
     <bean name="customerService"
-          class="com.pluralsight.service.CustomerServiceImpl" autowire="constructor">
+          class="com.pluralsight.service.CustomerServiceImpl" autowire="byType">
     </bean>
 
 </beans>
