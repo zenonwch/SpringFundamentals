@@ -7,10 +7,16 @@
     <bean name="repository"
           class="com.pluralsight.repository.HibernateCustomerRepositoryImpl"/>
 
+    <!-- without autowire -->
+    <!--<bean name="customerService"-->
+          <!--class="com.pluralsight.service.CustomerServiceImpl">-->
+        <!--&lt;!&ndash;<property name="customerRepository" ref="repository"/>&ndash;&gt;           &lt;!&ndash; setter injection &ndash;&gt;-->
+        <!--<constructor-arg index="0" ref="repository"></constructor-arg>            &lt;!&ndash; constructor injection &ndash;&gt;-->
+    <!--</bean>-->
+
+    <!-- with autowire -->
     <bean name="customerService"
-          class="com.pluralsight.service.CustomerServiceImpl">
-        <!--<property name="customerRepository" ref="repository"/>-->           <!-- setter injection -->
-        <constructor-arg index="0" ref="repository"></constructor-arg>            <!-- constructor injection -->
+          class="com.pluralsight.service.CustomerServiceImpl" autowire="constructor">
     </bean>
 
 </beans>
