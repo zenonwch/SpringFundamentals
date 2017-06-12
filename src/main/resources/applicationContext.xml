@@ -4,7 +4,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean name="repository"
+    <bean name="customerRepository"
           class="com.pluralsight.repository.HibernateCustomerRepositoryImpl"/>
 
     <!-- without autowire -->
@@ -16,7 +16,7 @@
 
     <!-- with autowire -->
     <bean name="customerService"
-          class="com.pluralsight.service.CustomerServiceImpl" autowire="byType">
+          class="com.pluralsight.service.CustomerServiceImpl" autowire="byName">
     </bean>
 
 </beans>
