@@ -2,12 +2,15 @@ package com.pluralsight.service;
 
 import com.pluralsight.model.Customer;
 import com.pluralsight.repository.CustomerRepository;
+import com.pluralsight.repository.HibernateCustomerRepositoryImpl;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service("customerService")
 public class CustomerServiceImpl implements CustomerService {
 
-	private CustomerRepository customerRepository;
+	private CustomerRepository customerRepository = new HibernateCustomerRepositoryImpl();
 
 	public CustomerServiceImpl() {
 	}
@@ -16,7 +19,7 @@ public class CustomerServiceImpl implements CustomerService {
 		this.customerRepository = customerRepository;
 	}
 
-	public void setRepository(final CustomerRepository customerRepository) {
+	public void setCustomerRepositoryRepository(final CustomerRepository customerRepository) {
 		this.customerRepository = customerRepository;
 	}
 
